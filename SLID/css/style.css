@@ -1,0 +1,147 @@
+/* slid  */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.album {
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  position: relative;
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.carousel.is-set {
+  transform: none;
+  transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.carousel-element {
+  background: #ddd;
+  flex: 1 0 100%;
+  text-align: center;
+  order: 2;
+  position: relative;
+  height: 100% !important;
+  max-width: 100% !important;
+  padding: 0;
+}
+
+.carousel-element.is-ref {
+  order: 1;
+}
+
+.controls {
+  padding: 2em;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-element>img, video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  padding: 0 !important;
+}
+
+.left-arrow,
+.right-arrow {
+  height: 15%;
+  position: absolute;
+  top: 40%;
+  z-index: 1;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15%;
+  opacity: 0.8;
+  transition: opacity .15s ease;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: 0;
+  background: url("../../assets/left-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.right-arrow {
+  right: 0;
+  background: url("../../assets/right-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.arrow-anim {
+  animation-name: arrow-anim;
+  -webkit-animation-name: arrow-anim;
+  animation-duration: 0.35s;
+  -webkit-animation-duration: 0.35s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes arrow-anim {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes arrow-anim {
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+img{
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
